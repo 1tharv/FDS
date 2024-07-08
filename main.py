@@ -27,10 +27,25 @@ def sub(row,column,matrixA,matrixB):
             ans[i][j]=matrixA[i][j]-matrixB[i][j]
     return ans
 
+def add(row,column,matrixA,matrixB):
+    ans=[]
+    
+    for x in range(row):    
+        temp = []
+        for y in range(column):   
+            temp.append(int(0))
+        ans.append(temp)
+        
+    for i in range(row):
+        for j in range(column):
+            ans[i][j]=matrixA[i][j] + matrixB[i][j]
+    return ans
+
 def main():
     matrixA=[]
     matrixB=[]
-    answer=[]
+    answer1=[]
+    answer2=[]
     
     Row = int(input("Enter the number of rows:"))
     Column = int(input("Enter the number of columns:"))
@@ -48,7 +63,11 @@ def main():
     display(Row,Column,matrixB)
     
     print("\nMatrix A-B is")
-    answer=sub(Row,Column,matrixA,matrixB)
-    display(Row,Column,answer)
+    answer1=sub(Row,Column,matrixA,matrixB)
+    display(Row,Column,answer1)
+
+    print("\nMatrix A+B is")
+    answer2=add(Row,Column,matrixA,matrixB)
+    display(Row,Column,answer2)
     
 main()
